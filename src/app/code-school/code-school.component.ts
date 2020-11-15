@@ -9,8 +9,8 @@ export class CodeSchoolComponent {
   /* lesson page user currently at */
   currentLessonIndex = 0;
   /* array record which lesson has user finished (not skipped) */
-  finishedLessons = [false, false, false, false, false, false];
-  // finishedLessons = [true, true, true, true, true, true];
+  // finishedLessons = [false, false, false, false, false, false];
+  finishedLessons = [true, true, true, true, true, true];
   /* total number of lesson */
   totalLessonIndex = 5;
 
