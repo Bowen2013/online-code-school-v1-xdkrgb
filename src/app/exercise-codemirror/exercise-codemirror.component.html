@@ -1,0 +1,26 @@
+<ngx-codemirror [(ngModel)]="exerciseContentInternal" [options]="exerciseOptions">
+</ngx-codemirror>
+
+<button
+    color="primary"
+    mat-raised-button
+    class="run-btn"
+    (click)='run()'>
+  Run
+</button>
+
+<button
+    mat-raised-button
+    class="reset-btn"
+    (click)='reset()'>
+  Reset
+</button>
+
+<div class="result">
+	<p>Test case: {{testCasesString}}</p>
+	<p>Expected Answers: {{solutionAnswers}}</p>
+	<p>Your Answers: {{actualAnswers}}</p>
+
+	<span *ngIf="isCorrect" class="correct">Congrat! you are right, move to next section.</span>
+	<span *ngIf="isWrong" class="wrong">Try again.</span>
+</div>

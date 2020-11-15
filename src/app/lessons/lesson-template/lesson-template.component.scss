@@ -1,0 +1,20 @@
+// use absolute position to better show separate vertical scrollbar for each panel
+.left-panel {
+  bottom: 0%;
+  left: 0%;
+  padding: 18px 12px;
+  position: absolute;
+  overflow-y: auto;
+  top: 0%;
+  right: 50%;
+}
+
+.right-panel {
+  bottom: 0%;
+  left: 50%;
+  padding: 18px 12px;
+  position: absolute;
+  overflow-y: auto;
+  top: 0%;
+  right: 0%;
+}

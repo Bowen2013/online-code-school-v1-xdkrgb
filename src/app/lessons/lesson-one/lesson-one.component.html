@@ -1,0 +1,79 @@
+<lesson-template>
+
+	<div leftPanel>
+		<h2>Introduction</h2>
+
+
+		<p>
+			In programming, a variable is a container for a value. You can think of variables as little containers for
+			information that live in a computer’s memory. Information stored in variables, such as a username, account
+			number, or even personalized greeting can then be found in memory.
+		</p>
+		<p>
+			In JavaScript ES6 version, there are two keywords <code>let</code> and <code>const</code>, to create or
+			declare variables. There are a few general rules for naming variables:
+		</p>
+		<ul>
+			<li>Variable names cannot start with numbers.</li>
+			<li>Variable names are case sensitive, so myName and myname would be different variables. It is bad practice
+				to create two variables that have the same name using different cases.</li>
+			<li>Variable names cannot be the same as keywords. For a comprehensive list of keywords check out
+				<a target="_blank"
+					href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">
+					MDN’s keyword documentation
+				</a>.
+			</li>
+		</ul>
+
+		<p>The <code>let</code> keyword signals that the variable can be reassigned a different value. Take a look at
+			the example:</p>
+
+		<ngx-codemirror class="viewonly-1" [(ngModel)]="viewOnlyContent1" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>
+			The way you declare a <code>const</code> variable and assign a value to it follows the same structure as
+			<code>let</code>.
+			However, a <code>const</code> variable cannot be reassigned because it is constant.
+		</p>
+
+		<ngx-codemirror class="viewonly-2" [(ngModel)]="viewOnlyContent2" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>
+			If you try to reassign a<code>const</code> variable, you’ll get a <code>TypeError</code>.
+
+			Constant variables must be assigned a value when declared. If you try to declare a <code>const</code>
+			variable without a value, you’ll get a <code>SyntaxError</code>.
+		</p>
+	</div>
+
+	<div rightPanel>
+		<h2>Exercise</h2>
+		<p>The code below is throwing error, can you fix it with one line change?</p>
+
+		<ngx-codemirror [(ngModel)]="exerciseContent" [options]="exerciseOptions">
+		</ngx-codemirror>
+
+		<button
+        color="primary"
+        mat-raised-button
+        class="submit-btn"
+        (click)='submit()'>
+      Submit
+    </button>
+
+		<button
+        mat-raised-button
+        class="reset-btn"
+        (click)='reset()'>
+      Reset
+    </button>
+
+		<div class="result">
+			<span *ngIf="isCorrect" class="correct">Congrat! Click Next below to go to next lesson.</span>
+			<span *ngIf="isWrong" class="wrong">Try again. {{errorMessage}}.</span>
+		</div>
+
+	</div>
+</lesson-template>

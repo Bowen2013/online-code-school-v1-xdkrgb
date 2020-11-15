@@ -1,0 +1,5 @@
+export enum ANSWER_STATUS {
+  UNSPECIFIED,
+  CORRECT,
+  WRONG,
+}

@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.run-btn {
+  margin-top: 24px;
+  margin-right: 8px;
+}
+
+.correct {
+  color: $green;
+}
+
+.wrong {
+  color: $orange;
+}

@@ -1,0 +1,77 @@
+<div class="code-school-container">
+	<div class="header">
+		<div class="header-container">
+			<h3 class="title">Learn JavaScript</h3>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="main-container">
+			<ng-container *ngIf="currentLessonIndex === 0">
+				<lesson-preface (exerciseFinish)="onExerciseFinish($event)">
+				</lesson-preface>
+			</ng-container>
+
+			<ng-container *ngIf="currentLessonIndex === 1">
+				<lesson-one (exerciseFinish)="onExerciseFinish($event)">
+				</lesson-one>
+			</ng-container>
+
+			<ng-container *ngIf="currentLessonIndex === 2">
+				<lesson-two (exerciseFinish)="onExerciseFinish($event)"></lesson-two>
+			</ng-container>
+
+			<ng-container *ngIf="currentLessonIndex === 3">
+				<lesson-three (exerciseFinish)="onExerciseFinish($event)"></lesson-three>
+			</ng-container>
+
+			<ng-container *ngIf="currentLessonIndex === 4">
+				<lesson-four (exerciseFinish)="onExerciseFinish($event)"></lesson-four>
+			</ng-container>
+
+			<ng-container *ngIf="currentLessonIndex === 5">
+				<lesson-five (exerciseFinish)="onExerciseFinish($event)"></lesson-five>
+			</ng-container>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer-container">
+			<mat-select class="lesson-select" *ngIf="currentLessonIndex > 0" [(value)]="currentLessonIndex">
+				<mat-option [value]=1 [disabled]='!finishedLessons[1]'>Lesson 1: Introduction
+				</mat-option>
+				<mat-option [value]=2 [disabled]='!finishedLessons[2]'>Lesson 2: String Interpolation</mat-option>
+				<mat-option [value]=3 [disabled]='!finishedLessons[3]'>Lesson 3: Functions</mat-option>
+				<mat-option [value]=4 [disabled]='!finishedLessons[4]'>Lesson 4: Functions continued</mat-option>
+				<mat-option [value]=5 [disabled]='!finishedLessons[5]'>Lesson 5: Functions hoisting</mat-option>
+			</mat-select>
+
+			<button
+          mat-raised-button
+          class="back-btn"
+          [disabled]="isBackButtonDisabled"
+          (click)="backButtonClicked()">
+        Back
+      </button>
+			<span> {{ currentLessonIndex }} / {{ totalLessonIndex }}</span>
+			<button
+          *ngIf="!allLessonsFinished"
+          mat-raised-button
+          class="next-btn"
+          color="primary"
+          [disabled]="isNextButtonDisabled"
+          (click)="nextButtonClicked()">
+        Next
+      </button>
+			<button
+          *ngIf="allLessonsFinished"
+          mat-raised-button
+          class="finish-btn"
+          color="primary"
+          (click)="finishButtonClicked()">
+        Finish
+      </button>
+		</div>
+	</div>
+
+</div>

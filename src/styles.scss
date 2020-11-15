@@ -1,0 +1,64 @@
+/* Global Styles */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+/* @import "~@angular/material/prebuilt-themes/purple-green.css"; */
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+
+/* Add application styles & imports to this file! */
+@import "./styles/variables";
+
+/* Code-mirror custom themes */
+@import "~codemirror/lib/codemirror.css";
+
+@import "~codemirror/theme/idea.css";
+@import "~codemirror/theme/dracula.css";
+@import "~codemirror/theme/base16-light.css";
+
+@import "~codemirror/addon/fold/foldgutter.css";
+@import "~codemirror/addon/lint/lint.css";
+
+* {
+  font-family: Apercu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+router-outlet + * {
+  /* padding: 0 16px; */
+}
+
+/* Text */
+p,
+li {
+  font-weight: 400;
+  font-size: 17.6px;
+  line-height: 1.6;
+}
+
+code {
+  background-color: $grey;
+  font-family: Monaco, Menlo, Ubuntu Mono, Droid Sans Mono, Consolas, monospace;
+  font-size: 15.84px;
+  padding: 1px 6px;
+}
+
+h2 {
+  background-color: $grey;
+  padding: 4px 10px;
+}
+/* Hyperlink */
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

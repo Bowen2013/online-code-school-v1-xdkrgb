@@ -1,0 +1,91 @@
+<lesson-template>
+
+	<div leftPanel>
+		<h2>Functions</h2>
+		<p>In JavaScript, there are many ways to create a function. One way to create a function is by using a function
+			declaration.</p>
+
+		<ngx-codemirror class="viewonly-1" [(ngModel)]="viewOnlyContent1" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>However, some functions can take inputs and use the inputs to perform a task. When declaring a function, we
+			can specify its parameters. Parameters allow functions to accept input(s) and perform a task using the
+			input(s). We use parameters as placeholders for information that will be passed to the function when it is
+			called.</p>
+
+		<ngx-codemirror class="viewonly-2" [(ngModel)]="viewOnlyContent2" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>In the diagram above, <code>calculateArea()</code>, computes the area of a rectangle, based on two inputs,
+			<code>width</code> and <code>height</code>. The parameters are specified between the parenthesis as
+			<code>width</code> and <code>height</code>, and inside the function
+			body, they act just like regular variables. <code>width</code> and <code>height</code> act as placeholders
+			for values that will be
+			multiplied together.
+		</p>
+
+		<p>One of the features added in ES6 is the ability to use default parameters. Default parameters allow
+			parameters to have a predetermined value in case there is no argument passed into the function or if the
+			argument is undefined when called.</p>
+
+		<ngx-codemirror class="viewonly-3" [(ngModel)]="viewOnlyContent3" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<ul>
+			<li>In the example above, we used the <code>=</code> operator to assign the parameter <code>name</code> a
+				default value
+				of <code>'stranger'</code>.
+				This is useful to have in case we ever want to include a non-personalized default greeting!</li>
+			<li>When the code calls <code>greeting('Nick')</code> the value of the argument is passed in and,
+				<code>'Nick'</code>, will override the default parameter of <code>'stranger'</code> to log <code>'Hello,
+				Nick!'</code> to the console.</li>
+			<li>When there isn’t an argument passed into <code>greeting()</code>, the default value of
+				<code>'stranger'</code> is used, and <code>'Hello, stranger!'</code> is logged to the console.</li>
+		</ul>
+
+	</div>
+
+	<div rightPanel>
+		<h2>Exercise</h2>
+		<p>
+			The function <code>makeShoppingList()</code> creates a shopping list based on the items that are passed to
+			the function as arguments.
+
+			Imagine that you always purchase milk, bread, and eggs every time you go shopping for groceries. To make
+			creating a grocery list easier, let’s assign default values to the parameters in
+			<code>makeShoppingList()</code>.
+
+			Change the parameters of makeShoppingList() into default parameters :
+		</p>
+		<ol>
+			<li>Assign ‘milk’ as the default value of item1.</li>
+			<li>Assign ‘bread’ as the default value of item2.</li>
+			<li>Assign ‘eggs’ as the default value of item3.</li>
+		</ol>
+
+		<ngx-codemirror [(ngModel)]="exerciseContent" [options]="exerciseOptions">
+		</ngx-codemirror>
+
+		<button
+        color="primary"
+        mat-raised-button
+        class="submit-btn"
+        (click)='submit()'>
+      Submit
+    </button>
+
+		<button
+        mat-raised-button
+        class="reset-btn"
+        (click)='reset()'>
+      Reset
+    </button>
+
+		<div class="result">
+			<span *ngIf="isCorrect" class="correct">Congrat! Click Next below to go to next lesson.</span>
+			<span *ngIf="isWrong" class="wrong">Try again. {{errorMessage}}</span>
+		</div>
+
+
+	</div>
+</lesson-template>

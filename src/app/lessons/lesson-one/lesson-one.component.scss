@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+
+// change the height for the viewonly codemirror
+::ng-deep ngx-codemirror > .CodeMirror {
+  height: auto;
+}
+
+.submit-btn {
+  margin-top: 24px;
+  margin-right: 8px;
+}
+
+.result {
+  margin-top: 24px;
+}
+.correct {
+  color: $green;
+}
+
+.wrong {
+  color: $orange;
+}

@@ -1,0 +1,88 @@
+<lesson-template>
+
+	<div leftPanel>
+		<h2>Functions hoisting</h2>
+		<p>
+			The JavaScript engine hoists the function declarations. It moves the function declarations to the top
+			of the script. For example:
+		</p>
+
+		<ngx-codemirror class="viewonly-1" [(ngModel)]="viewOnlyContent1" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>In this example, we called the <code>add()</code> function before defining it. The above code is equivalent
+			to the following:</p>
+
+		<ngx-codemirror class="viewonly-2" [(ngModel)]="viewOnlyContent2" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>During the creation phase of the execution context, the JavaScript engine places the <code>add()</code>
+			function declaration in the heap memory. To be precise, the JavaScript engine creates an object of the
+			Function type and a function reference called add that refers to the function object.</p>
+
+		<br>
+		<br>
+		<p>
+			The following example changes the add from a regular function to a function expression:
+		</p>
+
+		<ngx-codemirror class="viewonly-3" [(ngModel)]="viewOnlyContent3" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<p>If you execute the code, the following error will occur: <code>add is not a function</code></p>
+
+		<p>During the creation phase of the global execution context, the JavaScript Engine creates the <code>add</code>
+			variable in
+			the memory and initializes its value to undefined. When executing the following code, the add is undefined,
+			hence, it isn’t a function:</p>
+
+		<p>The add variable is assigned to an anonymous function only during the execution phase of the global execution
+			context.</p>
+
+		<p>Summary</p>
+		<ul>
+			<li>JavaScript hoisting occurs during the creation phase of the execution context that moves the variable
+				and function declarations to the top of the script.</li>
+			<li>Function expressions and arrow functions aren’t hoisted.</li>
+		</ul>
+	</div>
+
+	<div rightPanel>
+		<h2>Exercise</h2>
+		<p>
+			What's the output for below code snippet?
+		</p>
+
+		<ngx-codemirror [(ngModel)]="exerciseContent1" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<input matInput #exercise1 placeholder="Enter your exercise 1 answer here" [(ngModel)]="exerciseAnswer1">
+
+		<ngx-codemirror [(ngModel)]="exerciseContent2" [options]="viewOnlyOptions">
+		</ngx-codemirror>
+
+		<input matInput #exercise1 placeholder="Enter your exercise 2 answer here" [(ngModel)]="exerciseAnswer2" >
+
+		<button
+        color="primary"
+        mat-raised-button
+        class="submit-btn"
+        (click)='submit()'>
+      Submit
+    </button>
+
+		<button
+        mat-raised-button
+        class="reset-btn"
+        (click)='reset()'>
+      Reset
+    </button>
+
+		<div class="result">
+			<span *ngIf="isCorrect" class="correct">Congrat! Click Next below to go to next lesson.</span>
+			<span *ngIf="isWrong" class="wrong">Try again. {{errorMessage}}</span>
+		</div>
+
+
+	</div>
+</lesson-template>

@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+
+// element that takes full view height
+.code-school-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+}
+
+.header {
+  background-color: $grey;
+  flex: 0 0 50px;
+}
+
+.main {
+  background-color: white;
+  border: 1px solid $grey;
+  flex: 1 1 auto;
+  height: calc(100vh - 100px);
+  padding: 12px 24px;
+}
+
+.footer {
+  background-color: $grey;
+  flex: 0 0 50px;
+}
+
+.header-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & > h3 {
+    font-weight: 600;
+    margin: 10px;
+  }
+}
+
+.main-container {
+  background-color: white;
+  // make sure it occupies full main div.
+  height: 100%;
+  position: relative;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.footer-container > * {
+  margin: 7px 100px 7px 0px;
+}
+
+.lesson-select {
+  position: absolute;
+  left: 12px;
+  width: 300px;
+}
+
+.finish-btn {
+  background-color: $green;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
